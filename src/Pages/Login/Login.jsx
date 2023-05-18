@@ -2,6 +2,7 @@ import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Google from "../Shared/SocialLogin/Google";
 
 
 const Login = () => {
@@ -89,6 +90,7 @@ const Login = () => {
         <p>Don&apos;t have an account? <Link to='/register' state={location.state} className="text-error ">Register</Link></p>
       </form>
       <ToastContainer></ToastContainer>
+      <Google></Google>
         </div>
     );
 };

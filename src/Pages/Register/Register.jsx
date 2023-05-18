@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
+import Google from "../Shared/SocialLogin/Google";
 
 
 const Register = () => {
@@ -143,6 +144,7 @@ const Register = () => {
                 <input type="submit" value="Register" className="py-2 mb-3 px-4 btn-error text-white duration-500 cursor-pointer rounded hover:bg-violet-600" />
                 <p>Already have an account? <Link to='/login' className="text-error">Login</Link></p>
             </form>
+            <Google></Google>
         </div>
     );
 };

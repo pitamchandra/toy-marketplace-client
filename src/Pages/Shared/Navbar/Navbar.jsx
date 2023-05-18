@@ -8,7 +8,6 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Navbar = () => {
     const {user, logout} = useContext(AuthContext)
-    console.log(user);
     const li = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allToys'>All Toys</Link></li>
