@@ -2,9 +2,11 @@
 
 import { Link } from "react-router-dom";
 import logo from '../../../assets/logo/logo.png'
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
-    const user = ' ';
+    const {user} = useContext(AuthContext)
     const li = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allToys'>All Toys</Link></li>

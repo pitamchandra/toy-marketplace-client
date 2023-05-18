@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
 
+    const {register} = useContext(AuthContext)
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -32,6 +36,16 @@ const Register = () => {
         form.confirm.focus()
         return;
       }
+      register(email, password).then(result =>{
+        const createdUser = result.user;
+        console.log(createdUser);
+        toast('please verify your email!!')
+        handleUpdateProfile(createdUser, name, photo)
+      })
+      .catch(error => {
+        toast(error.message)
+        console.log(error);
+      })
     }
 
     const handleName =(event) =>{
@@ -74,7 +88,18 @@ const Register = () => {
         }
       }
 
-    
+      const handleUpdateProfile = (loggedUser, name, photo) =>{
+        updateProfile(loggedUser, {
+          displayName : name,
+          photoURL : photo,
+        })
+        .then(result => {
+          console.log("successfull displayname", result);
+        })
+        .catch(error =>{
+          console.log(error);
+        })
+      }
 
     return (
         <div>
