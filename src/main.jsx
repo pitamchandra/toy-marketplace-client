@@ -7,6 +7,8 @@ import Error from './Pages/ErrorPage/Error.jsx'
 import Home from './Pages/Home/Home/Home.jsx'
 import AddToy from './Pages/Toy/AddToy/AddToy'
 import PrivateRoute from './Private/PrivateRoute'
+import Login from './Pages/Login/Login'
+import Register from './Pages/Register/Register'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       },
       {
         path: '/addToy',
