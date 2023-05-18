@@ -1,6 +1,9 @@
 
 import banner from '../../../assets/banner/banner.jpg'
 import { FaArrowRight } from 'react-icons/fa';
+import Gallery from '../Gallery/Gallery';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
 
 const Home = () => {
     return (
@@ -15,6 +18,9 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Gallery></Gallery>
+            <About></About>
+            <Contact></Contact>
         </div>
     );
 };

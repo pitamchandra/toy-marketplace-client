@@ -8,9 +8,13 @@ const Navbar = () => {
     const li = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/'>All Toys</Link></li>
-        <li><Link to='/'>My Toys</Link></li>
-        <li><Link to='/'>Add A Toy</Link></li>
         <li><Link to='/'>Blogs</Link></li>
+        {
+            user && <>
+            <li><Link to='/'>My Toys</Link></li>
+            <li><Link to='/'>Add A Toy</Link></li>
+            </> 
+        }
     </>
 
   return (
@@ -34,7 +38,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <img title={user?.displayName} className="w-12 h-12 rounded-full bg-error" src={user?.photoUrl} alt="user" />
+                
+                {
+                    user ? <>
+                        <img title={user?.displayName} className="w-12 h-12 mr-4 rounded-full bg-error" src={user?.photoUrl} alt="user" />
+                        <Link to='/login' className="btn btn-error text-white">Logout</Link>
+                    </> :
+                    <Link to='/login' className="btn btn-error text-white">Login</Link>
+                }
             </div>
         </div>
     </nav>
