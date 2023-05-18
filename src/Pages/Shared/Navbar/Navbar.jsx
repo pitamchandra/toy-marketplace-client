@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 import logo from '../../../assets/logo/logo.png'
 
 const Navbar = () => {
-    const user = '';
+    const user = ' ';
     const li = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/'>All Toys</Link></li>
-        <li><Link to='/'>Blogs</Link></li>
+        <li><Link to='/allToys'>All Toys</Link></li>
+        <li><Link to='/blogs'>Blogs</Link></li>
         {
             user && <>
-            <li><Link to='/'>My Toys</Link></li>
-            <li><Link to='/'>Add A Toy</Link></li>
+            <li><Link to='/myToys'>My Toys</Link></li>
+            <li><Link to='/addToy'>Add A Toy</Link></li>
             </> 
         }
     </>

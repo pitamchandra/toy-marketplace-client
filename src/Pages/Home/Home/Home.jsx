@@ -4,6 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import Gallery from '../Gallery/Gallery';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
+import Shop from '../Shop/Shop';
 
 const Home = () => {
     return (
@@ -18,8 +19,9 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <Gallery></Gallery>
             <About></About>
+            <Gallery></Gallery>
+            <Shop></Shop>
             <Contact></Contact>
         </div>
     );
