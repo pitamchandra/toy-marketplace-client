@@ -5,6 +5,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Main from './Layout/Main.jsx'
 import Error from './Pages/ErrorPage/Error.jsx'
 import Home from './Pages/Home/Home/Home.jsx'
+import AddToy from './Pages/Toy/AddToy/AddToy'
+import PrivateRoute from './Private/PrivateRoute'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/addToy',
+        element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
       }
     ]
   }
