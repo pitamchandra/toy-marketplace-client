@@ -9,6 +9,7 @@ import AddToy from './Pages/Toy/AddToy/AddToy'
 import PrivateRoute from './Private/PrivateRoute'
 import Login from './Pages/Login/Login'
 import Register from './Pages/Register/Register'
+import AuthProvider from './AuthProvider/AuthProvider'
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider><RouterProvider router={router}></RouterProvider></AuthProvider>
   </React.StrictMode>,
 )
