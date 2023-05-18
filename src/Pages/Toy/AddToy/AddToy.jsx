@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const AddToy = () => {
@@ -29,6 +30,23 @@ const AddToy = () => {
             description
         }
         console.log(toy);
+        fetch('http://localhost:5000/addToy', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(toy)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+                toast('toy added successful !')
+            }
+        })
+        .catch(error=>{
+            console.log(error);
+        })
     }
     return (
         <div className="container mx-auto my-10">
@@ -80,6 +98,7 @@ const AddToy = () => {
                 </div>
                 <input type="submit" value="Add a Toy" className="w-full btn btn-error text-white mt-2"/>
             </form>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

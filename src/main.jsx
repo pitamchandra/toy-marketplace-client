@@ -11,6 +11,7 @@ import Login from './Pages/Login/Login'
 import Register from './Pages/Register/Register'
 import AuthProvider from './AuthProvider/AuthProvider'
 import 'react-toastify/dist/ReactToastify.css';
+import AllToys from './Pages/Toy/AllToys/AllToys'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
       {
         path: '/addToy',
         element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
+      },
+      {
+        path: '/allToys',
+        element: <AllToys></AllToys>,
+        loader: () => fetch('http://localhost:5000/allToys')
       }
     ]
   }
