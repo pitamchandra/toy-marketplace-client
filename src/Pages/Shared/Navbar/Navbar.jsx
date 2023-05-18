@@ -34,7 +34,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <img title={user?.displayName} className="w-12 h-12 rounded-full bg-black" src={user?.photoUrl} alt="user" />
+                <img title={user?.displayName} className="w-12 h-12 rounded-full bg-error" src={user?.photoUrl} alt="user" />
             </div>
         </div>
     </nav>
