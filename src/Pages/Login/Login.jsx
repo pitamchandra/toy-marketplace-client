@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Google from "../Shared/SocialLogin/Google";
@@ -8,6 +8,10 @@ import Google from "../Shared/SocialLogin/Google";
 const Login = () => {
 
     const {login} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const path = location?.state?.pathname || '/';
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -33,6 +37,7 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser);
             toast('Login Successful !')
+            navigate(path)
         })
         .catch(error =>{
             console.log(error);
@@ -87,7 +92,7 @@ const Login = () => {
           </div>
         </div>
         <input type="submit" value="login" className="py-2 mb-3 px-4 btn-error text-white duration-500 cursor-pointer rounded hover:bg-violet-600" />
-        <p>Don&apos;t have an account? <Link to='/register' state={location.state} className="text-error ">Register</Link></p>
+        <p>Don&apos;t have an account? <Link to='/register' state={location?.state} className="text-error ">Register</Link></p>
       </form>
       <ToastContainer></ToastContainer>
       <Google></Google>

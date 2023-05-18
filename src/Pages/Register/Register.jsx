@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
@@ -9,6 +9,12 @@ import Google from "../Shared/SocialLogin/Google";
 const Register = () => {
 
     const {register} = useContext(AuthContext)
+
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const path = location?.state?.pathname || '/'
+    console.log(path);
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -42,6 +48,7 @@ const Register = () => {
         console.log(createdUser);
         toast('please verify your email!!')
         handleUpdateProfile(createdUser, name, photo)
+        navigate(path)
       })
       .catch(error => {
         toast(error.message)
