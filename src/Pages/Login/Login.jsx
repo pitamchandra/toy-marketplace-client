@@ -1,9 +1,12 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Login = () => {
+
+    const {login} = useContext(AuthContext)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -24,6 +27,16 @@ const Login = () => {
           form.password.focus()
           return;
         }
+        login(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            toast('Login Successful !')
+        })
+        .catch(error =>{
+            console.log(error);
+            toast(error.message)
+        })
       }
     
       const handleEmail = event =>{
@@ -38,13 +51,9 @@ const Login = () => {
     
       const handlePassword = event =>{
         const passwordInput = event.target.value;
-        
         setPassword(passwordInput)
-        if(password.length < 6){
+        if(passwordInput.length < 6){
           setPasswordError('password must be at least 6 characters')
-        }
-        else if(!/.+[A-Z]+./.test(passwordInput)){
-          setPasswordError('password must be at least one capital letter')
         }
         else{
           setPasswordError('')

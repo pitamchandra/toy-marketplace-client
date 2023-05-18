@@ -10,6 +10,7 @@ import PrivateRoute from './Private/PrivateRoute'
 import Login from './Pages/Login/Login'
 import Register from './Pages/Register/Register'
 import AuthProvider from './AuthProvider/AuthProvider'
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {

@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import logo from '../../../assets/logo/logo.png'
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext)
+    const {user, logout} = useContext(AuthContext)
+    console.log(user);
     const li = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/allToys'>All Toys</Link></li>
@@ -18,6 +20,13 @@ const Navbar = () => {
             </> 
         }
     </>
+
+    const handleLogout = () =>{
+        logout()
+        .then(()=>{
+            toast('logout successful !')
+        })
+    }
 
   return (
     <nav className=" bg-base-900">
@@ -43,13 +52,14 @@ const Navbar = () => {
                 
                 {
                     user ? <>
-                        <img title={user?.displayName} className="w-12 h-12 mr-4 rounded-full bg-error" src={user?.photoUrl} alt="user" />
-                        <Link to='/login' className="btn btn-error text-white">Logout</Link>
+                        <img title={user?.displayName} className="w-12 h-12 mr-4 rounded-full bg-error" src={user?.photoURL} alt="user" />
+                        <Link to='/login' onClick={handleLogout} className="btn btn-error text-white">Logout</Link>
                     </> :
                     <Link to='/login' className="btn btn-error text-white">Login</Link>
                 }
             </div>
         </div>
+        <ToastContainer></ToastContainer>
     </nav>
   );
 }
