@@ -11,17 +11,17 @@ const AllToys = () => {
         <div className="container mx-auto my-10">
             <h2 className="text-2xl font-bold mb-6">All Toys : {allToys.length}</h2>
             <div className="overflow-x-auto w-full">
-                <table className="table w-full">
+                <table className="table text-center w-full">
                     {/* head */}
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Toy Name</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>Available Quantity</th>
-                        <th>Action</th>
-                    </tr>
+                    <thead className="">
+                        <tr>
+                            <th>Name</th>
+                            <th>Toy Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Available Quantity</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody>
                     {
