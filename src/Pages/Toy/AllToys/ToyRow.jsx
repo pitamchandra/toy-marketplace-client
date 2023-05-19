@@ -6,7 +6,7 @@ const ToyRow = ({toy}) => {
     return (
         <tr>
             <td>{userName}</td>
-            <td>{name}</td>
+            <td className="capitalize">{name}</td>
             <td>{category}</td>
             <td>{price}</td>
             <td>{quantity}</td>

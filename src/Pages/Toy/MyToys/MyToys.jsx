@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import MyToysRow from "./MyToysRow";
+import Swal from "sweetalert2";
 
 
 const MyToys = () => {
@@ -14,7 +15,38 @@ const MyToys = () => {
         .catch(error=>console.log(error))
 
     }, [user])
-    console.log(toys);
+   
+    const handleDelete = (id) =>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/allToys/${id}`,{
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data =>{
+                    if(data.deletedCount > 0){
+                        const remaining = toys.filter(toy => toy._id !== id)
+                        setToys(remaining)
+                        Swal.fire(
+                            'Deleted Successfully!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+            }
+          })
+    }
+
+    
 
     return (
         <div className="container mx-auto my-10">
@@ -29,6 +61,7 @@ const MyToys = () => {
                         <th>Toy Name</th>
                         <th>Price</th>
                         <th>Rating</th>
+                        <th>Category</th>
                         <th>Available</th>
                         <th>Action</th>
                     </tr>
@@ -38,6 +71,7 @@ const MyToys = () => {
                         toys.map(toy => <MyToysRow
                             key={toy._id}
                             toy={toy}
+                            handleDelete={handleDelete}
                         ></MyToysRow>)
                     }
                     </tbody>
