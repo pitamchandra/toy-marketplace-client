@@ -5,7 +5,6 @@ import ToyRow from "./ToyRow";
 const AllToys = () => {
 
     const allToys = useLoaderData()
-    console.log(allToys);
 
     return (
         <div className="container mx-auto my-10">
