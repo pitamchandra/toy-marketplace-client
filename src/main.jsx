@@ -41,12 +41,12 @@ const router = createBrowserRouter([
       {
         path: '/allToys',
         element: <AllToys></AllToys>,
-        loader: () => fetch('http://localhost:5000/allToys')
+        loader: () => fetch('https://super-car-toy-server.vercel.app/allToys')
       },
       {
         path: '/allToys/:id',
         element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/allToys/${params.id}`)
+        loader: ({params}) => fetch(`https://super-car-toy-server.vercel.app/allToys/${params.id}`)
       },
       {
         path: '/myToys',
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       {
         path: '/updateToy/:id',
         element: <UpdateToy></UpdateToy>,
-        loader: ({params}) => fetch(`http://localhost:5000/allToys/${params.id}`)
+        loader: ({params}) => fetch(`https://super-car-toy-server.vercel.app/allToys/${params.id}`)
       }
     ]
   }
