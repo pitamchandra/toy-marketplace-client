@@ -1,9 +1,10 @@
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 
 const Products = ({category}) => {
-    const {photo, price, description, rating, name} = category;
+    const {_id, photo, price, description, rating, name} = category;
     return (
         <div className="card w-full bg-base-100 border-error border-2 shadow-xl">
             <figure><img className="w-full" src={photo} alt="product" /></figure>
@@ -20,7 +21,7 @@ const Products = ({category}) => {
                 <span className="ml-2">{rating}</span></p>
                 <p>{description}</p>
                 <div className="card-actions">
-                <button className="btn btn-error text-white">view details</button>
+                <Link to={`/allToys/${_id}`}><button className="btn btn-error text-white">view details</button></Link>
                 </div>
             </div>
         </div>

@@ -15,6 +15,7 @@ import AllToys from './Pages/Toy/AllToys/AllToys'
 import SingleToy from './Pages/Toy/SingleToy/SingleToy'
 import MyToys from './Pages/Toy/MyToys/MyToys'
 import UpdateToy from './Pages/Toy/UpdateToy/UpdateToy'
+import Blogs from './Pages/Blogs/Blogs'
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         path: '/updateToy/:id',
         element: <UpdateToy></UpdateToy>,
         loader: ({params}) => fetch(`https://super-car-toy-server.vercel.app/allToys/${params.id}`)
+      },
+      {
+        path: '/blogs',
+        element: <Blogs></Blogs>
       }
     ]
   }
