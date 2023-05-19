@@ -23,7 +23,7 @@ const Shop = () => {
 
 
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto mt-10'>
             <h2 className="text-center text-4xl font-bold mb-8">Shopping</h2>
             <Tabs>
                 <TabList>
