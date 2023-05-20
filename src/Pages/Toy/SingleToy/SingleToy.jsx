@@ -6,7 +6,7 @@ import { useLoaderData } from "react-router-dom";
 const SingleToy = () => {
     const { description, email, name, photo, price, quantity, rating, userName} = useLoaderData()
     return (
-        <div className="container mx-auto ">
+        <div className="container mx-auto px-3 md:px-0 ">
             <div className="md:w-2/4 mx-auto rounded-lg my-10 p-10 border-2 border-indigo-600">
                 <div>
                     <img src={photo} className="w-full rounded-lg shadow-2xl" />

@@ -49,7 +49,7 @@ const MyToys = () => {
     
 
     return (
-        <div className="container mx-auto my-10">
+        <div className="container mx-auto px-3 md:px-0 my-10">
             <h3 className="text-2xl mb-6 font-semibold">My Toys : {toys.length}</h3>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">

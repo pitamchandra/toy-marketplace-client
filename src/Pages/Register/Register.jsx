@@ -110,8 +110,8 @@ const Register = () => {
       }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit} className="container mx-auto md:w-1/4 my-10 border-2 shadow shadow-violet-500 border-violet-500 p-4 rounded">
+        <div className="container mx-auto px-3 md:px-0 ">
+            <form onSubmit={handleSubmit} className="md:w-1/4 mx-auto my-10 border-2 shadow shadow-violet-500 border-violet-500 p-4 rounded">
                 <h3 className="text-xl text-error font-semibold mb-3">Please Register</h3>
                 <div className="relative z-0 w-full mb-4 group">
                 <input type="text" name="name" id="name" value={name} onChange={handleName} className={`block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2  text-gray-900  appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0  peer`} placeholder=" " />

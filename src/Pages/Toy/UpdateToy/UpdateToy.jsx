@@ -32,7 +32,7 @@ const UpdateToy = () => {
     }
 
     return (
-        <div className="container mx-auto my-10">
+        <div className="container mx-auto px-3 md:px-0 my-10">
             <form onSubmit={handleUpdateToy} className="border-2 p-10 border-error shadow shadow-error">
                 <h3 className="text-center text-3xl text-error font-semibold mb-4">Update Toy Information</h3>
                 <div className="grid md:grid-cols-2 gap-6">

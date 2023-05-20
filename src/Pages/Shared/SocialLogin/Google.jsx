@@ -26,9 +26,9 @@ const Google = () => {
         })
     }
     return (
-        <div className="container mx-auto md:w-1/4 mb-10">
+        <div className="container mx-auto px-3 md:px-0 md:w-1/4 mb-10">
             <p className="text-center mb-5 text-xl">or</p>
-            <button onClick={handleLogin} className="btn btn-error text-white btn-outline w-full"> <FaGoogle className="mr-3"></FaGoogle> Login With Google</button>
+            <button onClick={handleLogin} className="btn btn-primary text-white btn-outline w-full"> <FaGoogle className="mr-3"></FaGoogle> Login With Google</button>
             <ToastContainer></ToastContainer>
         </div>
     );
