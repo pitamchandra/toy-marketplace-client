@@ -26,7 +26,7 @@ const Shop = () => {
         <div className='container mx-auto mt-10'>
             <h2 className="text-center text-4xl font-bold mb-8">Shopping</h2>
             <Tabs>
-                <div className='bg-violet-400 text-center capitalize font-semibold text-white'>
+                <div className='bg-violet-400 text-center capitalize font-semibold pt-3 text-white'>
                 <TabList>
                     <Tab>sports car</Tab>
                     <Tab>Truck</Tab>

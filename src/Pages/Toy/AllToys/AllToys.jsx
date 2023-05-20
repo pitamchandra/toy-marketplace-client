@@ -9,6 +9,10 @@ const AllToys = () => {
     return (
         <div className="container mx-auto my-10">
             <h2 className="text-2xl font-bold mb-6">All Toys : {allToys.length}</h2>
+            <div className="md:w-2/4 mx-auto relative mb-10">
+                <input type="text" placeholder="search" className="border border-gray-500 w-full p-3"/>
+                <button className="btn btn-error absolute top-0 right-0 rounded-none text-white px-7">search</button>
+            </div>
             <div className="overflow-x-auto w-full">
                 <table className="table text-center w-full">
                     {/* head */}
