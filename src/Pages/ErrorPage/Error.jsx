@@ -1,5 +1,7 @@
 
+import { Link } from 'react-router-dom';
 import error from '../../assets/error/error.jpg'
+import { FaArrowLeft } from 'react-icons/fa';
 
 const Error = () => {
     return (
@@ -9,6 +11,7 @@ const Error = () => {
                 <div className='text-center space-y-5'>
                     <h1 className='text-9xl text-white font-bold'><span className='text-error'> 404 </span></h1>
                     <p className='text-xl text-white font-bold'>Page Not Found !!!</p>
+                    <Link to='/' className='flex items-center justify-center border-2 py-2  border-error text-error bg-white'> <FaArrowLeft></FaArrowLeft> back to home</Link>
                 </div>
             </div>
         </div>

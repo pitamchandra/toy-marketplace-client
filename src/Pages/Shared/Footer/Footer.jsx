@@ -10,7 +10,9 @@ const Footer = () => {
                 <div>
                     <img className='w-24' src={logo} alt="logo" />
                     <p className='text-xl'><strong>Supper Car Toy LTD.</strong></p>
-                    <p className='text-lg'>Providing best smart toy since 2001. <br /> Discover the thrilling world of <br /> toy cars at our website!</p>
+                    <p className=''><strong>Phone</strong>: 01780659402</p>
+                    <p className=''><strong>Email</strong>: super@gmail.com</p>
+                    <p className=''><strong>Address</strong>: Thakurgaon, Dhaka, Bangladesh</p>
                 </div> 
                 <div>
                     <span className="text-xl text-black font-semibold">Services</span> 
