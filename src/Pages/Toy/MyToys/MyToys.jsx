@@ -2,20 +2,37 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import MyToysRow from "./MyToysRow";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const MyToys = () => {
     document.title = 'SuperToy | My Toys'
     const {user} = useContext(AuthContext)
     const [toys, setToys] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() =>{
-        fetch(`https://super-car-toy-server.vercel.app/allToys?email=${user?.email}`)
+        fetch(`https://super-car-toy-server.vercel.app/myToys?email=${user?.email}`, {
+            method : 'GET',
+            headers : {
+                authorization : `Bearer ${localStorage.getItem('access-token')}`
+            }
+        })
         .then(res => res.json())
-        .then(data => setToys(data))
+        .then(data => {
+            if(!data.error){
+                setToys(data)
+            }
+            else{
+                toast('your token expired, login again')
+                navigate('/')
+            }
+                
+        })
         .catch(error=>console.log(error))
 
-    }, [user])
+    }, [user,navigate])
    
     const handleDelete = (id) =>{
         Swal.fire({
@@ -79,6 +96,7 @@ const MyToys = () => {
                     
                 </table>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
