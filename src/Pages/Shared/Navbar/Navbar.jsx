@@ -28,7 +28,7 @@ const Navbar = () => {
     }
 
   return (
-    <nav className=" bg-base-900">
+    <nav className="mt-3 bg-base-900">
         <div className="navbar container mx-auto px-3 md:px-0">
             <div className="navbar-start">
                 <div className="dropdown">
@@ -51,7 +51,9 @@ const Navbar = () => {
                 
                 {
                     user ? <>
-                        <img title={user?.displayName} className="w-12 h-12 mr-4 rounded-full bg-error" src={user?.photoURL} alt="user" />
+                    <div className="tooltip tooltip-bottom tooltip-error" data-tip={user?.displayName}>
+                        <img className="w-12 h-12 mr-4 rounded-full bg-error" src={user?.photoURL} alt="user" />
+                    </div>
                         <Link to='/login' onClick={handleLogout} className="btn btn-error text-white">Logout</Link>
                     </> :
                     <Link to='/login' className="btn btn-error text-white">Login</Link>
