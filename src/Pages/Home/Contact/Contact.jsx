@@ -6,7 +6,7 @@ const Contact = () => {
             <div className="">
                 <h2 className="text-center text-4xl font-bold mb-8">Contact Us</h2>
                 <div className="grid md:grid-cols-2 bg-slate-300 items-center">
-                    <img data-aos="fade-right" data-duration='4000'className="h-full" src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGFjdHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" alt="Album"/>
+                    <img data-aos="fade-right" data-aos-duration="4000" className="h-full" src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGFjdHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" alt="Album"/>
                     <form className="p-12">
                         <div className="mb-4">
                             <label htmlFor="name" className="text-lg mb-3">Your Name</label>

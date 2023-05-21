@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 
 const AddToy = () => {
+    document.title = 'SuperToy | Add Toys'
     const {user} = useContext(AuthContext)
 
     const handleAddToy = (event) =>{
@@ -50,8 +51,9 @@ const AddToy = () => {
     }
     return (
         <div className="container mx-auto px-3 md:px-0 my-10">
-            <form onSubmit={handleAddToy} className="border-2 p-10 border-error shadow shadow-error">
-                <h3 className="text-center text-3xl text-error font-semibold mb-4">Add a Toy</h3>
+            <h3 className="text-center text-3xl text-white py-3 font-semibold bg-error">Add a Toy</h3>
+            <form onSubmit={handleAddToy} className="border-2 p-10 border-error bg-red-100 shadow shadow-error">
+                
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="mb-5">
                         <label className="font-bold" htmlFor="name">Toy Name</label>

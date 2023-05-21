@@ -7,6 +7,7 @@ import Contact from '../Contact/Contact';
 import Shop from '../Shop/Shop';
 
 const Home = () => {
+    document.title = 'SuperToy | Home'
     return (
         <div>
             <div className='relative'>

@@ -1,6 +1,7 @@
 
 
 const Blogs = () => {
+    document.title = 'SuperToy | Blogs'
     return (
         <div className="container px-3 md:px-0 lg:w-2/4 mx-auto my-10">
             <div className="mb-8">

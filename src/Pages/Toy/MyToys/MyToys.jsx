@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 
 const MyToys = () => {
+    document.title = 'SuperToy | My Toys'
     const {user} = useContext(AuthContext)
     const [toys, setToys] = useState([])
 

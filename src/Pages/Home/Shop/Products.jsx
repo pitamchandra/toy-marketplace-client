@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Products = ({category}) => {
     const {_id, photo, price, description, rating, name} = category;
     return (
-        <div className="card w-full bg-base-100 border-error border-2 shadow-xl">
+        <div data-aos="zoom-in" data-aos-duration="1000" className="card w-full bg-base-100 border-error duration-500 hover:bg-violet-100 hover:border-violet-600 border-2 shadow-xl">
             <figure><img className="w-full" src={photo} alt="product" /></figure>
             <div className="card-body">
                 <h2 className="card-title capitalize">{name}</h2>

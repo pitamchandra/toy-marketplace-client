@@ -1,6 +1,6 @@
 
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from '../../../assets/logo/logo.png'
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
@@ -9,13 +9,13 @@ import { ToastContainer, toast } from "react-toastify";
 const Navbar = () => {
     const {user, logout} = useContext(AuthContext)
     const li = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/allToys'>All Toys</Link></li>
-        <li><Link to='/blogs'>Blogs</Link></li>
+        <li><NavLink className={({ isActive }) => isActive ? "bg-error text-white" : ""} to='/'>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "bg-error text-white" : ""}  to='/allToys'>All Toys</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "bg-error text-white" : ""}  to='/blogs'>Blogs</NavLink></li>
         {
             user && <>
-            <li><Link to='/myToys'>My Toys</Link></li>
-            <li><Link to='/addToy'>Add A Toy</Link></li>
+            <li><NavLink className={({ isActive }) => isActive ? "bg-error text-white" : ""} to='/myToys'>My Toys</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? "bg-error text-white" : ""} to='/addToy'>Add A Toy</NavLink></li>
             </> 
         }
     </>

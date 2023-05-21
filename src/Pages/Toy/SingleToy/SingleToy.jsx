@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 
 
 const SingleToy = () => {
+    document.title = 'SuperToy | Toy Details'
     const { description, email, name, photo, price, quantity, rating, userName} = useLoaderData()
     return (
         <div className="container mx-auto px-3 md:px-0 ">

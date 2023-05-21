@@ -23,10 +23,10 @@ const Shop = () => {
 
 
     return (
-        <div className='container mx-auto px-3 md:px-0 mt-10'>
+        <div className='px-3 md:px-0 mt-10'>
             <h2 className="text-center text-4xl font-bold mb-8">Shopping</h2>
             <Tabs>
-                <div className='bg-violet-400 text-center capitalize font-semibold pt-3 text-white'>
+                <div className='bg-red-500 text-center capitalize font-semibold pt-3 text-white'>
                 <TabList>
                     <Tab>sports car</Tab>
                     <Tab>Truck</Tab>
@@ -36,6 +36,7 @@ const Shop = () => {
                 </TabList>
                 </div>
 
+                <div className='container mx-auto'>
                 <TabPanel>
                     <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8'>
                         {
@@ -86,6 +87,7 @@ const Shop = () => {
                         }
                     </div>
                 </TabPanel>
+                </div>
             </Tabs>
         </div>
     );

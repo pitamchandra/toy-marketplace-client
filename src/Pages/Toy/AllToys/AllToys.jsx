@@ -4,12 +4,11 @@ import { useState } from "react";
 
 
 const AllToys = () => {
-
+    document.title = 'SuperToy | All Toys'
     const toys = useLoaderData()
     const [allToys, setAllToys] = useState(toys)
 
     const [searchText, setSearchText] = useState('')
-    console.log(searchText);
 
     const handleSearch = () =>{
         const searchToys = toys.filter(toy => toy.name.toUpperCase() == searchText.toUpperCase())
