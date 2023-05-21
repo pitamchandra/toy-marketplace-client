@@ -12,7 +12,7 @@ const UpdateToy = () => {
         const quantity = form.quantity.value;
         const description = form.description.value;
         const updateToy = {
-            price,
+            price : parseInt(price),
             description,
             quantity
         }
@@ -37,11 +37,11 @@ const UpdateToy = () => {
                 <h3 className="text-center text-3xl text-error font-semibold mb-4">Update Toy Information</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="mb-5">
-                        <label className="font-bold" htmlFor="name">Toy Price</label>
+                        <label className="font-bold" htmlFor="price">Toy Price</label>
                         <input type="text" name="price" defaultValue={price} placeholder="toy price" className="w-full border-gray-500 border-2 p-2 mt-2" required />
                     </div>
                     <div className="mb-5">
-                        <label className="font-bold" htmlFor="name">Available Quantity</label>
+                        <label className="font-bold" htmlFor="quantity">Available Quantity</label>
                         <input type="text" name="quantity" defaultValue={quantity} placeholder="quantity" className="w-full border-gray-500 border-2 p-2 mt-2" required />
                     </div>
                 </div>

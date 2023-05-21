@@ -24,7 +24,7 @@ const AddToy = () => {
             photo,
             userName,
             email,
-            price,
+            price : parseInt(price),
             rating,
             quantity,
             category,
@@ -64,23 +64,23 @@ const AddToy = () => {
                         <input type="text" name="photo" placeholder="photo url" className="w-full border-gray-500 border-2 p-2 mt-2" required />
                     </div>
                     <div className="mb-5">
-                        <label className="font-bold" htmlFor="name">User Name</label>
+                        <label className="font-bold" htmlFor="userName">User Name</label>
                         <input type="text" name="userName" placeholder="user name" defaultValue={user?.displayName} className="w-full border-gray-500 border-2 p-2 mt-2" readOnly />
                     </div>
                     <div className="mb-5">
-                        <label className="font-bold" htmlFor="name">User Email</label>
+                        <label className="font-bold" htmlFor="email">User Email</label>
                         <input type="text" name="email" placeholder="user email" defaultValue={user?.email} className="w-full border-gray-500 border-2 p-2 mt-2" readOnly />
                     </div>
                     <div className="mb-5">
-                        <label className="font-bold" htmlFor="name">Toy Price</label>
-                        <input type="text" name="price" placeholder="toy price" className="w-full border-gray-500 border-2 p-2 mt-2" required />
+                        <label className="font-bold" htmlFor="price">Toy Price</label>
+                        <input type="number" name="price" placeholder="toy price" className="w-full border-gray-500 border-2 p-2 mt-2" required />
                     </div>
                     <div className="mb-5">
-                        <label className="font-bold" htmlFor="name">Rating</label>
+                        <label className="font-bold" htmlFor="number">Rating</label>
                         <input type="number" min={0} max={5} name="rating" placeholder="rating" className="w-full border-gray-500 border-2 p-2 mt-2" required />
                     </div>
                     <div className="mb-5">
-                        <label className="font-bold" htmlFor="name">Available Quantity</label>
+                        <label className="font-bold" htmlFor="text">Available Quantity</label>
                         <input type="text" name="quantity" placeholder="quantity" className="w-full border-gray-500 border-2 p-2 mt-2" required />
                     </div>
                     <div className="mb-5">

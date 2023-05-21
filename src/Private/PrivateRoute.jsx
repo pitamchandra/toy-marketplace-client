@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 import loadingImg from '../assets/loading/loading-chain.gif'
+import { ToastContainer, toast } from "react-toastify";
 
 
 const PrivateRoute = ({children}) => {
@@ -18,7 +19,11 @@ const PrivateRoute = ({children}) => {
     if(user){
         return children;
     }
-    return <Navigate to='/login' state={location}></Navigate>
+    return <>
+    <Navigate to='/login' state={location}></Navigate>
+    {toast("Please Login first!")}
+    <ToastContainer></ToastContainer>
+    </>
 };
 
 export default PrivateRoute;
