@@ -1,7 +1,7 @@
 
-
+import { FaCarCrash } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
-import logo from '../../../assets/logo/logo.png'
+// import logo from '../../../assets/logo/logo.png'
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
@@ -9,13 +9,13 @@ import { ToastContainer, toast } from "react-toastify";
 const Navbar = () => {
     const {user, logout} = useContext(AuthContext)
     const li = <>
-        <li><NavLink className={({ isActive }) => isActive ? "bg-error text-white" : ""} to='/'>Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "bg-error text-white" : ""}  to='/allToys'>All Toys</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "bg-error text-white" : ""}  to='/blogs'>Blogs</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "px-4 text-error" : "px-4"} to='/'>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "px-4 text-error" : "px-4"}  to='/allToys'>All Toys</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "px-4 text-error" : "px-4"}  to='/blogs'>Blogs</NavLink></li>
         {
             user && <>
-            <li><NavLink className={({ isActive }) => isActive ? "bg-error text-white" : ""} to='/myToys'>My Toys</NavLink></li>
-            <li><NavLink className={({ isActive }) => isActive ? "bg-error text-white" : ""} to='/addToy'>Add A Toy</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? "px-4 text-error" : "px-4"} to='/myToys'>My Toys</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? "px-4 text-error" : "px-4"} to='/addToy'>Add A Toy</NavLink></li>
             </> 
         }
     </>
@@ -28,7 +28,7 @@ const Navbar = () => {
     }
 
   return (
-    <nav className="mt-3 bg-base-900">
+    <nav className="my-2 bg-base-900">
         <div className="navbar container mx-auto px-3 md:px-0">
             <div className="navbar-start">
                 <div className="dropdown">
@@ -39,16 +39,15 @@ const Navbar = () => {
                     {li}
                 </ul>
                 </div>
-                <Link to='/' className="text-xl"><img className="w-24 mr-3" src={logo} alt="logo" /></Link>
-                <Link to='/' className="text-xl hidden md:block">Super Car Toy</Link>
+                <Link to='/' className="text-xl hidden md:block styles_font">Happy Child</Link>
+                <Link to='/' className="text-xl"><FaCarCrash className="w-7 text-red-400" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="flex nav_menu">
                 {li}
                 </ul>
             </div>
             <div className="navbar-end">
-                
                 {
                     user ? <>
                     <div className="tooltip tooltip-bottom tooltip-error" data-tip={user?.displayName}>
@@ -56,7 +55,12 @@ const Navbar = () => {
                     </div>
                         <Link to='/login' onClick={handleLogout} className="btn btn-error text-white">Logout</Link>
                     </> :
-                    <Link to='/login' className="btn btn-error text-white">Login</Link>
+                    <div className="">
+                        <div className="brand_button">
+                            <Link to='/login' className="btn_text">Login</Link>
+                            <span className="btn_design"></span>
+                        </div>
+                    </div>
                 }
             </div>
         </div>

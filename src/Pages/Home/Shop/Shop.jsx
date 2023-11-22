@@ -24,9 +24,10 @@ const Shop = () => {
 
     return (
         <div className='px-3 md:px-0 mt-10'>
-            <h2 className="text-center text-4xl font-bold mb-8">Shopping</h2>
+            <h2 className="text-center text-4xl font-bold mb-2">Shopping</h2>
+            <div className="w-20 m-auto border-t-2 mb-10 border-error"></div>
             <Tabs>
-                <div className='bg-red-500 text-center capitalize font-semibold pt-3 text-white'>
+                <div className='bg-red-500 text-center rounded-t-2xl capitalize font-semibold pt-3 text-white'>
                 <TabList>
                     <Tab>sports car</Tab>
                     <Tab>Truck</Tab>
